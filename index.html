@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КАЛЬКУЛЯТОР</title>
+    <link rel="shortcut icon" type="image/png" href="icon.png">
+    <style>
+        body{
+            background-color: #1C1C1E;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Roboto Bold", sans-serif;
+        }    
+        
+        div{
+            background-color: #2C2C2C;
+            border-radius: 8px;
+            color: #fff;
+            width: 30%;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+        }
+        .eblan {
+            
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #2C2C2C;
+            font-family: "Roboto Bold", sans-serif;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0 0 10px 2px white;
+            width: 25%;
+
+
+        }
+        h1{
+            
+            background-color: #2C2C2C;
+            font-family: "Roboto Bold", sans-serif;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 0 10px 2px white;
+            font-size: 20px;
+        }
+        #PAPYEBAL{
+            
+            font-family: "Roboto Regular", sans-serif;
+            margin-top:10px;
+            color: #fff;
+            background-color: #7F7F7F ;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            width: 30%;
+        }
+        #MAMYEBAL{
+            font-family: "Roboto Regular", sans-serif;
+            color: #fff;
+            background-color: #7F7F7F ;
+            border-radius: 8px;
+            margin-top: 10px;
+            width: 30%;
+
+        }
+        #BABKYEBAL{
+            font-family: "Roboto Regular", sans-serif;
+            background-color: #7F7F7F ;
+            border-radius: 8px;
+            color: #fff;
+            margin-top: 10px;
+            height: 50px;
+            width: 30%;
+            margin-bottom: 10px
+        }
+    </style>
+    
+
+</head>
+<body>
+    <div class="eblan">
+            <h1>Калькулятор от Сашка и Петька</h1>
+            <input type="text" id="PAPYEBAL" oninput="this.value=this.value.replace( /[^0-9+*/\-]/g,'');" />
+            <button id="MAMYEBAL">РАССЧИТАТЬ</button>
+        <div id="BABKYEBAL">Here goes the output</div>
+        <script>
+            const btnMAMYEBAL = document.getElementById('MAMYEBAL');
+            const inputPAPYEBAL = document.getElementById('PAPYEBAL');
+            const divBABKYEBAL = document.getElementById('BABKYEBAL');
+
+
+            btnMAMYEBAL.addEventListener('click', function() {
+            const text = inputPAPYEBAL.value;
+            const result = eval(text);
+            divBABKYEBAL.innerHTML = result;
+            });
+
+        </script>
+
+    </div>
+</body>
+</html>
